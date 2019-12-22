@@ -11,7 +11,6 @@ defmodule ErleansElixirExample.MixProject do
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
   def application do
     [
       extra_applications: [:logger],
@@ -19,10 +18,14 @@ defmodule ErleansElixirExample.MixProject do
     ]
   end
 
-  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:erleans, path: "../erleans"}
+      {:postgrex, "~> 0.15.3"},
+      {:ecto_sql, "~> 3.0"},
+      {:erleans_provider_ecto, github: "erleans/erleans_provider_ecto"},
+      {:erleans, github: "erleans/erleans"}
+      # {:erleans_provider_ecto, path: "../erleans_provider_ecto"},
+      # {:erleans, path: "../erleans"}
     ]
   end
 end

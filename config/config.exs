@@ -1,7 +1,18 @@
 import Config
 
 config :erleans,
-  providers: %{:in_memory => %{:module => :erleans_provider_ets, :args => %{}}},
+  providers: %{
+    :in_memory => %{:module => :erleans_provider_ets, :args => %{}},
+    :postgres => %{
+      :module => ErleansProviderEcto,
+      :args => [
+        {:database, "test"},
+        {:username, "test"},
+        {:hostname, "localhost"},
+        {:adapter, Ecto.Adapters.Postgres}
+      ]
+    }
+  },
   default_provider: :in_memory
 
 config :lasp,
