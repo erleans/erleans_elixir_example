@@ -1,7 +1,7 @@
 defmodule ErleansElixirExample do
   use Erleans.Grain,
     placement: :prefer_local,
-    provider: :postgres,
+    provider: :default,
     state: %{:counter => 0}
 
   def get(ref) do

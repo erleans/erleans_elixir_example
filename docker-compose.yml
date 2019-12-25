@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: circleci/postgres:11.3-alpine-ram
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_DB=test
+    ports:
+      - 5432:5432
+
+  # doesn't work, can't figure out why
+  # mysql:
+  #   image: mysql:5
+  #   command: --default-authentication-plugin=mysql_native_password
+  #   environment:
+  #     MYSQL_DATABASE: testdb
+  #     MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+  #     MYSQL_USER: test
+  #     MYSQL_PASSWORD: test
+  #   ports:
+  #     - 3306:3306

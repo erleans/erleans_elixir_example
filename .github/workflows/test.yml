@@ -19,7 +19,7 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
         env:
           POSTGRES_USER: test
-          POSTGRES_DB: test
+          POSTGRES_DB: testdb
 
     steps:
     - uses: actions/checkout@v1.0.0

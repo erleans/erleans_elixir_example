@@ -4,16 +4,15 @@ config :erleans,
   providers: %{
     :in_memory => %{:module => :erleans_provider_ets, :args => %{}},
     :postgres => %{
-      :module => ErleansProviderEcto,
+      :module => ErleansProviderEcto.Postgres,
       :args => [
-        {:database, "test"},
+        {:database, "testdb"},
         {:username, "test"},
-        {:hostname, "localhost"},
-        {:adapter, Ecto.Adapters.Postgres}
+        {:hostname, "localhost"}
       ]
     }
   },
-  default_provider: :in_memory
+  default_provider: :postgres
 
 config :lasp,
   membership: true,
@@ -29,7 +28,3 @@ config :partisan,
   peer_port: 10200,
   pid_encoding: false,
   partisan_peer_service_manager: :partisan_default_peer_service_manager
-
-config :logger,
-  handle_otp_reports: false,
-  handle_sasl_reports: false

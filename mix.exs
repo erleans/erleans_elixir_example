@@ -21,7 +21,7 @@ defmodule ErleansElixirExample.MixProject do
   defp deps do
     [
       {:postgrex, "~> 0.15.3"},
-      {:ecto_sql, "~> 3.0"},
+      {:ecto_sql, "~> 3.3.2"},
       {:erleans_provider_ecto, github: "erleans/erleans_provider_ecto"},
       {:erleans, github: "erleans/erleans"}
       # {:erleans_provider_ecto, path: "../erleans_provider_ecto"},

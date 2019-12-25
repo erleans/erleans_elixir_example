@@ -4,9 +4,9 @@ defmodule ErleansElixirExampleTest do
 
   setup do
     on_exit(fn ->
-      repo = :postgres
-      ErleansProviderEcto.PostgresRepo.put_dynamic_repo(repo)
-      ErleansProviderEcto.PostgresRepo.delete_all(ErleansProviderEcto.Grain)
+      {repo_name, repo_module} = {:postgres, ErleansProviderEcto.PostgresRepo}
+      repo_module.put_dynamic_repo(repo_name)
+      repo_module.delete_all(ErleansProviderEcto.Grain)
       :ok
     end)
   end
