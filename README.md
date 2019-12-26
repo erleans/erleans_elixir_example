@@ -1,6 +1,6 @@
 # Erleans Elixir Example
 
-![](https://github.com/erleans/erleans_provider_ecto/workflows/Erleans%20Elixir%20Example%20tests/badge.svg)
+![](https://github.com/erleans/erleans_elixir_example/workflows/Erleans%20Elixir%20Example%20tests/badge.svg)
 
 Simple Grain to show using Erleans from Elixir along with Ecto and Postgres.
 
